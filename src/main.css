@@ -1,10 +1,53 @@
-@import './base.css';
-
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url('@/fonts/ProximaNova-Light.woff2') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url('@/fonts/ProximaNova-Regular.woff2') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url('@/fonts/ProximaNova-Semibold.woff2') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url('@/fonts/ProximaNova-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
 
 :root {
+  --color-gradient: linear-gradient(265.48deg, #4870ff -5.06%, #fa00ff 94.87%);
+  --color-translucent: #01011f66;
+  --color-white: #fff;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-semiBold: 600;
+  --weight-bold: 700;
+
+  --fontSize-16: 16px;
+  --fontSize-18: 18px;
+
+  --fontFamily-Proxima-Nova: 'Proxima-Nova', sans-serif;
+
+  --clip-path-bottom-line: inset(0 0 0 0 round 4px 4px 0 0);
+
+  --boxShadow-button: 0px 4px 16px 0px rgba(138, 97, 255, 0.6);
 }
 
 /*-----------------------------------*\
@@ -17,6 +60,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--fontFamily-Proxima-Nova);
 }
 
 li {
@@ -85,9 +129,31 @@ body {
 }
 
 #app {
-  max-width: 100vw;
+  width: 100vw;
 }
 
 /*-----------------------------------*\
   #REUSED STYLE
+\*-----------------------------------*/
+
+.container {
+  width: 1440px;
+}
+/* по дефолту кнопки будут шириной 160px и высотой 44px */
+.button {
+  font-size: var(--fontSize-18);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  background: var(--color-gradient);
+  width: 160px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: var(--boxShadow-button);
+}
+
+/*-----------------------------------*\
+  #MEDIA
 \*-----------------------------------*/
