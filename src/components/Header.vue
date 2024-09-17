@@ -23,10 +23,9 @@ import logo from '@/assets/logo.svg'
 <style lang="css" scoped>
 .header {
   background: var(--color-translucent);
-  position: fixed;
+  position: absolute;
+  top: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .header .container {
   height: 72px;

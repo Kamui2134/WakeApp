@@ -31,23 +31,46 @@
 \*-----------------------------------*/
 
 :root {
+  --color-white: #fff;
+  --color-white-translucent: rgba(255, 255, 255, 0.5);
   --color-gradient: linear-gradient(265.48deg, #4870ff -5.06%, #fa00ff 94.87%);
   --color-translucent: #01011f66;
-  --color-white: #fff;
+  --color-cloudy: linear-gradient(
+    268.31deg,
+    rgba(79, 89, 124, 0.4) 0%,
+    rgba(123, 135, 175, 0.4) 50.52%,
+    rgba(63, 72, 105, 0.4) 100%
+  );
+  --color-form-border: rgba(58, 64, 84, 1);
+  --color-placeholder: rgba(5, 13, 42, 0.4);
+  --color-input: rgb(5, 13, 42);
+  --color-checkbox: rgb(5, 13, 42);
+  --color-game-active: #4870ff;
+  --color-footer: #01011f;
 
   --weight-light: 300;
   --weight-regular: 400;
   --weight-semiBold: 600;
   --weight-bold: 700;
 
+  --fontSize-10: 10px;
+  --fontSize-12: 12px;
+  --fontSize-14: 14px;
   --fontSize-16: 16px;
   --fontSize-18: 18px;
+  --fontSize-22: 22px;
+  --fontSize-28: 28px;
+  --fontSize-36: 36px;
+  --fontSize-48: 48px;
 
   --fontFamily-Proxima-Nova: 'Proxima-Nova', sans-serif;
 
   --clip-path-bottom-line: inset(0 0 0 0 round 4px 4px 0 0);
 
   --boxShadow-button: 0px 4px 16px 0px rgba(138, 97, 255, 0.6);
+
+  --radius-8: 8px;
+  --radius-16: 16px;
 }
 
 /*-----------------------------------*\
@@ -86,6 +109,9 @@ a {
 main {
   width: 100%;
 }
+footer {
+  width: 100%;
+}
 
 input,
 button,
@@ -95,7 +121,8 @@ textarea {
   font: inherit;
 }
 
-button {
+button,
+a {
   cursor: pointer;
 }
 
@@ -138,6 +165,8 @@ body {
 
 .container {
   width: 1440px;
+  margin-inline: auto;
+  padding-inline: 200px;
 }
 /* по дефолту кнопки будут шириной 160px и высотой 44px */
 .button {
@@ -150,8 +179,91 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: var(--radius-8);
   box-shadow: var(--boxShadow-button);
+}
+.ad-icon {
+  width: 36px;
+  height: 36px;
+}
+.social-link {
+  color: var(--color-white);
+  width: 16px;
+  height: 16px;
+}
+.input {
+  height: 44px;
+  flex-grow: 1;
+  background-color: var(--color-white);
+  padding-inline: 14px;
+  padding-block: 13px 12px;
+  line-height: 20px;
+  font-weight: var(--weight-regular);
+  font-size: var(--fontSize-16);
+  color: var(--color-input);
+  border-radius: var(--radius-8);
+  outline: transparent;
+}
+.input::placeholder {
+  color: var(--color-placeholder);
+  line-height: 20px;
+  font-size: var(--fontSize-16);
+  font-weight: var(--weight-regular);
+}
+.textarea {
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 128px;
+  min-height: 128px;
+}
+.title {
+  color: var(--color-white);
+  font-size: var(--fontSize-36);
+  font-weight: 700;
+  line-height: 44px;
+}
+.description {
+  color: var(--color-white);
+  font-size: var(--fontSize-16);
+  font-weight: 400;
+  line-height: 19px;
+}
+.game-name {
+  position: relative;
+  text-align: left;
+  color: var(--color-white);
+  font-size: var(--fontSize-16);
+  font-weight: 700;
+  line-height: 20px;
+  z-index: 1;
+}
+.game-description {
+  position: relative;
+  z-index: 1;
+  font-size: var(--fontSize-12);
+  font-weight: var(--weight-light);
+  color: var(--color-white-translucent);
+}
+.game-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-game-active);
+  width: 68px;
+  height: 22px;
+  color: var(--color-white);
+  font-size: var(--fontSize-10);
+  font-weight: var(--weight-semiBold);
+  border-radius: var(--radius-16);
+  line-height: 12px;
+  position: relative;
+  z-index: 1;
+}
+.disclaimer {
+  color: var(--color-white);
+  font-size: var(--fontSize-14);
+  font-weight: var(--weight-regular);
+  line-height: 17px;
 }
 
 /*-----------------------------------*\
