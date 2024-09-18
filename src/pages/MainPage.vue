@@ -177,9 +177,12 @@
       </div>
     </div>
   </footer>
+  <Loader :isLoading="isLoading" />
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import Loader from '@/components/Loader.vue'
 import dice from '@/assets/icons/dice.png'
 import slot from '@/assets/icons/slot.png'
 import watch from '@/assets/icons/24h.png'
@@ -193,6 +196,13 @@ import rudolphRide from '@/assets/games/rudolph-ride.jpg'
 import starBurst from '@/assets/games/starBurst.jpg'
 import bannerPromo from '@/assets/banner_promo.jpeg'
 import fairBonus from '@/assets/image.png'
+
+let isLoading = ref(true)
+onMounted(() => {
+  setTimeout(() => {
+    isLoading.value = false
+  }, 2000)
+})
 </script>
 
 <style lang="css" scoped>
