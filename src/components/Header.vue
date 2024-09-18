@@ -1,5 +1,12 @@
 <script setup>
+import { ref } from 'vue'
 import logo from '@/assets/logo.svg'
+import PopUp from '@/components/PopUp.vue'
+let isActive = ref(true)
+
+function openPopUp() {
+  isActive.value = true
+}
 </script>
 
 <template>
@@ -13,11 +20,12 @@ import logo from '@/assets/logo.svg'
         <a class="nav-link" href="#">About</a>
       </nav>
       <div class="authorization-buttons">
-        <a class="sign-up" href="#">Sign up</a>
+        <button class="sign-up" href="#" @click="openPopUp()">Sign up</button>
         <a class="button log-in" href="#">Log in</a>
       </div>
     </div>
   </header>
+  <PopUp :isActive="isActive" @update:isActive="isActive = $event" />
 </template>
 
 <style lang="css" scoped>

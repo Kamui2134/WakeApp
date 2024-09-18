@@ -32,13 +32,7 @@
             <input class="input" type="email" name="email" placeholder="Email Address" />
             <input class="button" type="submit" value="Join Now" />
           </div>
-          <div class="form-checkbox">
-            <label class="checkbox">
-              <input class="real-checkbox" type="checkbox" name="checkbox" />
-              <span class="custom-checkbox"></span>
-              I Accept The&nbsp;<u> Privacy Policy</u>
-            </label>
-          </div>
+          <div class="form-checkbox"><Checkbox /></div>
         </form>
       </section>
       <article class="games">
@@ -137,11 +131,7 @@
               />
             </div>
             <div class="confirm-container">
-              <label class="checkbox">
-                <input class="real-checkbox" type="checkbox" name="checkbox" />
-                <span class="custom-checkbox"></span>
-                I Accept The&nbsp;<u> Privacy Policy</u>
-              </label>
+              <Checkbox />
               <button class="button">Send</button>
             </div>
           </div>
@@ -177,12 +167,15 @@
       </div>
     </div>
   </footer>
+
   <Loader :isLoading="isLoading" />
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+
 import Loader from '@/components/Loader.vue'
+import Checkbox from '@/components/Checkbox.vue'
 import dice from '@/assets/icons/dice.png'
 import slot from '@/assets/icons/slot.png'
 import watch from '@/assets/icons/24h.png'
@@ -196,6 +189,7 @@ import rudolphRide from '@/assets/games/rudolph-ride.jpg'
 import starBurst from '@/assets/games/starBurst.jpg'
 import bannerPromo from '@/assets/banner_promo.jpeg'
 import fairBonus from '@/assets/image.png'
+
 
 let isLoading = ref(true)
 onMounted(() => {
@@ -346,42 +340,8 @@ onMounted(() => {
 }
 .form-checkbox {
   height: 17px;
-}
-.checkbox {
   display: flex;
-  align-items: center;
-  color: var(--color-white);
-  font-size: var(--fontSize-14);
-  font-weight: var(--weight-regular);
-  user-select: none;
-  line-height: 17px;
-}
-.real-checkbox {
-  display: none;
-}
-.custom-checkbox {
-  position: relative;
-  background-color: var(--color-white);
-  width: 14px;
-  height: 14px;
-  border-radius: 2px;
-  margin-right: 8px;
-}
-.custom-checkbox::before {
-  content: '';
-  position: absolute;
-  display: none;
-  background-image: url('@/assets/icons/check.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 14px;
-  height: 14px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.checkbox .real-checkbox:checked ~ .custom-checkbox::before {
-  display: block;
+  justify-content: flex-start;
 }
 .games {
   width: 100%;
@@ -408,6 +368,7 @@ onMounted(() => {
   font-size: var(--fontSize-16);
   font-weight: var(--weight-semiBold);
   text-align: right;
+  margin-inline-start: auto;
 }
 .games-body {
   display: flex;

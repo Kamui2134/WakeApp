@@ -3,7 +3,6 @@ const props = defineProps({
   isLoading: Boolean,
   required: true
 })
-console.log(props.isLoading)
 </script>
 <template>
   <div v-if="props.isLoading" class="loader">
