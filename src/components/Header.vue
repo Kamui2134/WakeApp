@@ -26,10 +26,11 @@ import logo from '@/assets/logo.svg'
   position: absolute;
   top: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .header .container {
   height: 72px;
-  padding-inline: 200px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -84,5 +85,25 @@ import logo from '@/assets/logo.svg'
 .button.log-in {
   width: 114px;
   height: 40px;
+}
+/*-----------------------------------*\
+  #MEDIA
+\*-----------------------------------*/
+@media (max-width: 992px) {
+  .authorization-buttons {
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .authorization-buttons {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .nav {
+    gap: 15px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
 }
 </style>

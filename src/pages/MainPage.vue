@@ -197,6 +197,8 @@ import fairBonus from '@/assets/image.png'
 
 <style lang="css" scoped>
 .main {
+  display: flex;
+  justify-content: center;
   background-image: url('@/assets/bg_hero.png'), url('@/assets/bg_contact.jpeg');
 
   /* Позиционируем изображения: первое по центру, второе внизу справа */
@@ -221,7 +223,6 @@ import fairBonus from '@/assets/image.png'
 }
 .main .container {
   padding-block-start: 126px;
-  padding-inline: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -259,6 +260,7 @@ import fairBonus from '@/assets/image.png'
 .hero .button {
   width: 160px;
   height: 44px;
+  min-width: 160px;
 }
 .button.log-in {
   background: transparent;
@@ -280,13 +282,14 @@ import fairBonus from '@/assets/image.png'
 }
 .form-head {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .form-title {
   font-size: var(--fontSize-22);
   font-weight: var(--weight-bold);
   color: var(--color-white);
   line-height: 27px;
+  text-align: left;
   text-transform: uppercase;
   white-space: nowrap;
   align-self: flex-end;
@@ -294,7 +297,6 @@ import fairBonus from '@/assets/image.png'
 .ad-container {
   display: flex;
   gap: 24px;
-  margin-inline-start: auto;
 }
 .ad {
   display: flex;
@@ -400,6 +402,7 @@ import fairBonus from '@/assets/image.png'
 .games-body {
   display: flex;
   gap: 16px;
+  justify-content: space-between;
 }
 .left-grid {
   display: grid;
@@ -408,7 +411,7 @@ import fairBonus from '@/assets/image.png'
   gap: 16px;
 }
 .left-grid .game-img {
-  width: 160px;
+  width: 100%;
   height: 120px;
   border-radius: var(--radius-16);
   margin-bottom: 6px;
@@ -425,6 +428,8 @@ import fairBonus from '@/assets/image.png'
 }
 .right-grid-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding-block: 16px;
   padding-inline: 12px 74px;
 }
@@ -437,16 +442,10 @@ import fairBonus from '@/assets/image.png'
   row-gap: 9px;
 }
 .right-grid-item:nth-of-type(1) > .game-name {
-  margin-bottom: 5px;
-}
-.right-grid-item:nth-of-type(1) > .game-description {
-  margin-bottom: 16px;
+  margin-block-end: 5px;
 }
 .right-grid-item:nth-of-type(2) > .game-name {
-  margin-bottom: 5px;
-}
-.right-grid-item:nth-of-type(2) > .game-description {
-  margin-bottom: 16px;
+  margin-block-end: 5px;
 }
 .right-grid .game-img {
   position: absolute;
@@ -472,6 +471,7 @@ import fairBonus from '@/assets/image.png'
 .right-grid .right-grid-item:nth-of-type(3) .game-button {
   width: 81px;
   height: 22px;
+  margin-block-start: 0;
 }
 .games .disclaimer {
   margin-inline-end: 384px;
@@ -512,11 +512,14 @@ import fairBonus from '@/assets/image.png'
   line-height: 20px;
 }
 .contactUs-img {
+  align-self: flex-end;
   width: 475px;
   height: 475px;
 }
 .footer {
   background-color: var(--color-footer);
+  display: flex;
+  justify-content: center;
 }
 .footer .container {
   display: flex;
@@ -527,6 +530,7 @@ import fairBonus from '@/assets/image.png'
 .footer-title {
   color: var(--color-white);
   margin-block-end: 16px;
+  text-align: center;
 }
 .footer .disclaimer {
   text-align: center;
@@ -559,4 +563,156 @@ import fairBonus from '@/assets/image.png'
 /*-----------------------------------*\
   #MEDIA
 \*-----------------------------------*/
+@media (min-width: 2250px) {
+  .main {
+    background-size:
+      100% 52%,
+      contain;
+  }
+}
+@media (max-width: 1440px) {
+  .main {
+    background-size:
+      100% 40%,
+      cover;
+  }
+}
+@media (max-width: 1200px) {
+  .main {
+    background-size:
+      100% 45%,
+      cover;
+  }
+  .right-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 160px 160px;
+  }
+  .right-grid-item {
+    padding-inline-end: 34px;
+  }
+}
+@media (max-width: 992px) {
+  .registration-form {
+    width: 720px;
+  }
+  .ad-container {
+    gap: 6px;
+  }
+  .form-body .input:nth-of-type(3) {
+    width: 100%;
+    max-width: 100%;
+  }
+  .form-body .input {
+    width: 100%;
+  }
+  .games-body {
+    flex-direction: column;
+  }
+  .left-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .right-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .right-grid-item {
+    padding-inline-end: 200px;
+  }
+  .games .disclaimer {
+    margin-inline-end: 160px;
+  }
+  .contactUs-container {
+    margin-bottom: 20px;
+  }
+  .contactUs-inputs {
+    gap: 15px;
+  }
+  .contactUs-img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    background-size:
+      100% 30%,
+      cover;
+  }
+  .hero-title {
+    width: 100%;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-size: var(--fontSize-48);
+    font-weight: var(--weight-bold);
+    color: var(--color-white);
+    margin-bottom: 6px;
+  }
+  .hero-subtitle {
+    width: 80%;
+    line-height: 30px;
+    font-size: var(--fontSize-28);
+    font-weight: var(--weight-regular);
+    color: var(--color-white);
+    margin-bottom: 24px;
+  }
+  .registration-form {
+    width: 400px;
+  }
+  .form-head {
+    flex-direction: column;
+  }
+  .form-title {
+    align-self: stretch;
+    text-align: center;
+  }
+  .ad-container {
+    justify-content: center;
+  }
+  .form-body {
+    flex-direction: column;
+    align-items: flex-end;
+    anchor-name: --form-body;
+  }
+  .form-checkbox {
+    position: absolute;
+    position-anchor: --form-body;
+    bottom: anchor(bottom);
+    left: anchor(left);
+    transform: translateY(-50%);
+  }
+  .right-grid-item {
+    padding-inline-end: 100px;
+  }
+  .games .disclaimer {
+    margin-inline-end: 100px;
+  }
+  .contactUs-img {
+    width: 220px;
+    height: 220px;
+  }
+}
+@media (max-width: 575px) {
+  .main {
+    background-size:
+      100% 25%,
+      cover;
+  }
+  .registration-form {
+    width: min(400px, 100%);
+  }
+  .right-grid-item {
+    padding-inline-end: 50px;
+  }
+  .games .disclaimer {
+    margin-inline-end: 50px;
+  }
+  .contactUs {
+    display: flex;
+    justify-content: center;
+  }
+  .contactUs-img {
+    display: none;
+  }
+}
 </style>
