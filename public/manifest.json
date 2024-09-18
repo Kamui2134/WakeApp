@@ -1,0 +1,36 @@
+{
+  "name": "WakeApp",
+  "short_name": "WakeApp",
+  "description": "WakeApp helps users play is awesome HTML5 Games - no Money!",
+  "start_url": "/",
+  "form_factor": ["small", "medium", "large"],
+  "display": "standalone",
+  "background_color": "#01011f",
+  "theme_color": "#01011f66",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "src/assets/icons/24h.png",
+      "type": "image/png",
+      "sizes": "75x75"
+    },
+    {
+      "src": "src/assets/icons/dice.png",
+      "type": "image/png",
+      "sizes": "75x75"
+    },
+    {
+      "src": "src/assets/icons/slot.png",
+      "type": "image/png",
+      "sizes": "75x75"
+    },
+    {
+      "src": "/public/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "150x150"
+    }
+  ],
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr"
+}

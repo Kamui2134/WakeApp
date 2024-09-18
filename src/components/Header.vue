@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import logo from '@/assets/logo.svg'
 import PopUp from '@/components/PopUp.vue'
-let isActive = ref(true)
+let isActive = ref(false)
 
 function openPopUp() {
   isActive.value = true
@@ -61,23 +61,6 @@ function openPopUp() {
   font-weight: var(--weight-bold);
   color: var(--color-white);
 }
-.nav-link:hover {
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: var(--color-gradient);
-}
-.nav-link:hover::after {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  transform: translate(50%);
-  content: '';
-  width: 50px;
-  height: 4px;
-  background: var(--color-gradient);
-  clip-path: var(--clip-path-bottom-line);
-}
 .authorization-buttons {
   margin-inline-start: auto;
   display: flex;
@@ -97,6 +80,45 @@ function openPopUp() {
 /*-----------------------------------*\
   #MEDIA
 \*-----------------------------------*/
+@media (hover: hover) {
+  .nav-link:hover {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: var(--color-gradient);
+  }
+  .nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%);
+    width: 50px;
+    height: 4px;
+    background: var(--color-gradient);
+    clip-path: var(--clip-path-bottom-line);
+  }
+}
+@media (hover: none) {
+  .nav-link:active {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: var(--color-gradient);
+  }
+  .nav-link:active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%);
+    width: 50px;
+    height: 4px;
+    background: var(--color-gradient);
+    clip-path: var(--clip-path-bottom-line);
+  }
+}
+
 @media (max-width: 992px) {
   .authorization-buttons {
     gap: 10px;

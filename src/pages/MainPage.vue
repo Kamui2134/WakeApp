@@ -190,7 +190,6 @@ import starBurst from '@/assets/games/starBurst.jpg'
 import bannerPromo from '@/assets/banner_promo.jpeg'
 import fairBonus from '@/assets/image.png'
 
-
 let isLoading = ref(true)
 onMounted(() => {
   setTimeout(() => {
@@ -388,9 +387,6 @@ onMounted(() => {
   margin-bottom: 6px;
   object-fit: cover;
 }
-.left-grid .game-name:hover {
-  color: var(--color-game-active);
-}
 .right-grid {
   display: grid;
   gap: 16px;
@@ -534,6 +530,17 @@ onMounted(() => {
 /*-----------------------------------*\
   #MEDIA
 \*-----------------------------------*/
+@media (hover: hover) {
+  .left-grid .game-name:hover {
+    color: var(--color-game-active);
+  }
+}
+@media (hover: none) {
+  .left-grid .game-name:active {
+    color: var(--color-game-active);
+  }
+}
+
 @media (min-width: 2250px) {
   .main {
     background-size:
