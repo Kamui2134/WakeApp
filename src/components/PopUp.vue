@@ -20,7 +20,7 @@
 <script setup>
 import { defineProps, defineEmits } from 'vue'
 import Checkbox from './Checkbox.vue'
-import crossIcon from '@/assets/icons/cross.svg'
+import crossIcon from '/icons/cross.svg'
 
 const props = defineProps({
   isActive: {

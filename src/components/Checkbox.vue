@@ -33,7 +33,7 @@
   content: '';
   position: absolute;
   display: none;
-  background-image: url('@/assets/icons/check.svg');
+  background-image: url('/icons/check.svg');
   background-size: contain;
   background-repeat: no-repeat;
   width: 14px;

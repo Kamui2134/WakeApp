@@ -10,22 +10,22 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "src/assets/icons/24h.png",
+      "src": "/icons/24h.png",
       "type": "image/png",
       "sizes": "75x75"
     },
     {
-      "src": "src/assets/icons/dice.png",
+      "src": "/icons/dice.png",
       "type": "image/png",
       "sizes": "75x75"
     },
     {
-      "src": "src/assets/icons/slot.png",
+      "src": "/icons/slot.png",
       "type": "image/png",
       "sizes": "75x75"
     },
     {
-      "src": "/public/favicon.ico",
+      "src": "/favicon.ico",
       "type": "image/x-icon",
       "sizes": "150x150"
     }
